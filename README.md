@@ -2,9 +2,9 @@
 Evaluacion de prestaciones de aplicaciones de Internet
 
 # ORGANIZACION
-Carpeta mem: Memoria del TFG, actualmente solo plantilla
-Carpeta cod:
-	sub-Carpetas de versiones: Cada una de estas carpetas contiene el código requerido (Servidor Java, Elastic...)
+1. mem: Memoria del TFG, actualmente solo plantilla.
+2. cod: Cada una de estas carpetas contiene el código requerido (Servidor Java, Elastic...)
+3. doc: Documentos de referencia, links, información importante.
 
 # TO-DO
 1. Creación de la API de Java
