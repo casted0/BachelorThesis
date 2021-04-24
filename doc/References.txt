@@ -1,0 +1,5 @@
+[1] - Grafana vs Kibana : 	https://blog.mdcloud.es/grafana-vs-kibana-diferencias/
+[2] - Elastic APM Java Agent :  https://www.elastic.co/blog/monitoring-java-applications-and-getting-started-with-the-elastic-apm-java-agent
+[3] - APM Java Agent Set-up  :  https://www.elastic.co/guide/en/apm/agent/java/current/setup.html
+[4] - Monitorizacion de servidores - Telegraf, grafana : https://www.youtube.com/watch?v=GLE71pIHUU8
+[5] - Simple multithread server java - http://tutorials.jenkov.com/java-multithreaded-servers/thread-pooled-server.html
