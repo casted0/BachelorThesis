@@ -10,13 +10,13 @@ def curl():
 
 threadList = []
 
-for i in range(100):
+for i in range(5):
     t = threading.Thread(target=curl)
     t.demon = True
     threadList.append(t)
 
-for i in range(100):
+for i in range(5):
     threadList[i].start()
 
-for i in range(100):
+for i in range(5):
     threadList[i].join()
