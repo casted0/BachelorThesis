@@ -4,8 +4,12 @@ import os
 import BROWNIAN
 import numpy as np
 import time
+from scipy.stats import norm
+import matplotlib
+from pylab import plot, show, grid, xlabel, ylabel, legend
+from fracdiff import fdiff
 
-url = "curl 127.0.0.1:8080"
+url = "curl 192.168.1.46:8080"
 
 def curl():
     for i in range(5):
@@ -43,28 +47,47 @@ t = np.linspace(0.0, N*dt, N+1)
 
 y = BROWNIAN.fracdif_brownian(x)
 
+plot(t, x[0], "-b", label="Original Array")
+plot(t, y[0], "-g", label="Fraccional diff Array")
+legend()
+xlabel('Time (minutes)', fontsize=16)
+ylabel('Requests (per Minute)', fontsize=16)
+grid(True)
+show()
+
+f = open("Users.log", "w")
+
 for i in range(y.size):
 
 
-    print("Minuto: ", i)
-    print("Peticiones: ", int(y[0][i]))
+    print("Intervalo: ", i)
+    print("Usuarios: ", int(y[0][i])*3)
+    print("Peticiones por usuario: 5")
+    print("Total de peticiones: ", int(y[0][i])*15)
+    
+    f.write("Intervalo: " + str(i))
+    f.write("Usuarios: " + str(int(y[0][i])*3))
+    f.write("Peticiones por usuario: 5")
+    f.write("Total de peticiones: " + str(int(y[0][i])*15))
+    f.write("\n\n")
 
-    for j in range(int(y[0][i])*2):
+    for j in range(int(y[0][i])*3):
         t = threading.Thread(target=curl)
         t.demon = True
         threadList.append(t)
         
-    for j in range(int(y[0][i])*2):
+    for j in range(int(y[0][i])*3):
         if not t.is_alive():
             threadList[j].start()
         
-    for j in range(int(y[0][i])*2):
+    for j in range(int(y[0][i])*3):
         threadList[j].join()
         
     threadList.clear()
+    time.sleep(60)
         
-        
-        
+            
+f.close()
         
 """
 
@@ -73,6 +96,6 @@ por lo tanto esa es la cantidad de veces que se va a:
 
 1. Crear n*2 hilos (Siendo n el numero del array en la iteracion correspondiente)
 2. Cada hilo va a ejecutar 5 peticiones al servidor
-    - Cada peticion hace una llamada simple que casi no consume tiempo, el resultado estara entre 0*2 y 50*2 a lo sumo *5 = unas 500 peticiones en un minuto
+    - Cada peticion hace una llamada simple que casi no consume tiempo, el resultado estara entre 0*2 y 50*3 a lo sumo *5 = unas 750 peticiones en un minuto
 
 """
