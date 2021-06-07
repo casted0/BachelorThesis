@@ -84,7 +84,6 @@ for i in range(y.size):
         threadList[j].join()
         
     threadList.clear()
-    time.sleep(60)
         
             
 f.close()

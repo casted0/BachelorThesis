@@ -10,3 +10,4 @@
 [10] - Fractional differentiation theory - https://www.wiley.com/en-us/Advances+in+Financial+Machine+Learning-p-9781119482086
 [11] - Fractional differentiation thery (2) TFG - http://saber.ucv.ve/bitstream/123456789/12416/1/TEG%20Henry%20Navarro.pdf
 [12] - Fractional differentiation stocks IMPORTANT - https://ideas.repec.org/p/war/wpaper/2020-32.html
+[13] - Connections between telegraf, grafana and influxDB - https://www.youtube.com/watch?v=FrqeG-IajWM
